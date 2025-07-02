@@ -1,8 +1,8 @@
 import React from "react";
-import CustomDropdown from "./DropDown";
+import CustomDropdown from "../Elements/DropDown";
 import { Edit2, Check, X } from "lucide-react";
 
-const DesktopTableView = ({
+const DesktopTrackingTableView = ({
   filteredList,
   editingRow,
   handleInputChange,
@@ -36,7 +36,7 @@ const DesktopTableView = ({
           <tbody>
             {filteredList.map((row, index) => (
               <tr key={row.id || index}>
-                <td>
+                <td className="input-class">
                   {editingRow === index ? (
                     <input
                       type="text"
@@ -49,7 +49,7 @@ const DesktopTableView = ({
                     row.name
                   )}
                 </td>
-                <td>
+                <td className="input-class">
                   {editingRow === index ? (
                     <input
                       type="date"
@@ -62,7 +62,7 @@ const DesktopTableView = ({
                     row.date
                   )}
                 </td>
-                <td>
+                <td className="input-class">
                   {editingRow === index ? (
                     <input
                       type="text"
@@ -75,7 +75,7 @@ const DesktopTableView = ({
                     row.pickup
                   )}
                 </td>
-                <td>
+                <td className="input-class">
                   {editingRow === index ? (
                     <input
                       type="text"
@@ -99,7 +99,7 @@ const DesktopTableView = ({
                     row.driver
                   )}
                 </td>
-                <td>
+                <td className="input-class">
                   {editingRow === index ? (
                     <input
                       type="number"
@@ -174,4 +174,4 @@ const DesktopTableView = ({
   );
 };
 
-export default DesktopTableView;
+export default DesktopTrackingTableView;

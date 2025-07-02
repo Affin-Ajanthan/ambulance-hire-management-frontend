@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CustomDropdown from "./DropDown";
+import CustomDropdown from "../Elements/DropDown";
 import { Search, Filter } from "lucide-react";
 
 const TableViewFilters = ({
@@ -81,7 +81,7 @@ const TableViewFilters = ({
           <div className="filters-grid">
             <div className="filter-group">
               <label className="filter-label">Search by Name</label>
-              <div style={{ position: "relative" }}>
+              <div className="customer-name-search">
                 <Search
                   size={16}
                   style={{
@@ -123,7 +123,7 @@ const TableViewFilters = ({
               />
             </div>
 
-            <div className="filter-group">
+            <div className="filter-group input-class">
               <label className="filter-label">Date From</label>
               <input
                 type="date"
@@ -133,7 +133,7 @@ const TableViewFilters = ({
               />
             </div>
 
-            <div className="filter-group">
+            <div className="filter-group input-class">
               <label className="filter-label">Date To</label>
               <input
                 type="date"

@@ -1,8 +1,8 @@
 import React from "react";
-import CustomDropdown from "./DropDown";
+import CustomDropdown from "../Elements/DropDown";
 import { Edit2, Check, X } from "lucide-react";
 
-const MobileTableView = ({
+const MobileTrackingTableView = ({
   filteredList,
   editingRow,
   handleInputChange,
@@ -23,7 +23,7 @@ const MobileTableView = ({
         <div key={row.id || index} className="card">
           <div className="card-header">
             <div style={{ flex: 1 }}>
-              <h3 className="card-title">
+              <h3 className="card-title input-class">
                 {editingRow === index ? (
                   <input
                     type="text"
@@ -34,7 +34,7 @@ const MobileTableView = ({
                   row.name
                 )}
               </h3>
-              <p className="card-date">
+              <p className="card-date input-class">
                 {editingRow === index ? (
                   <input
                     type="date"
@@ -63,7 +63,7 @@ const MobileTableView = ({
           <div>
             <div className="card-row">
               <span className="card-label">Pickup:</span>
-              <span className="card-value">
+              <span className="card-value input-class">
                 {editingRow === index ? (
                   <input
                     type="text"
@@ -79,7 +79,7 @@ const MobileTableView = ({
             </div>
             <div className="card-row">
               <span className="card-label">Destination:</span>
-              <span className="card-value">
+              <span className="card-value input-class">
                 {editingRow === index ? (
                   <input
                     type="text"
@@ -112,7 +112,7 @@ const MobileTableView = ({
               style={{ borderBottom: "none", paddingTop: "12px" }}
             >
               <span className="card-label">Amount:</span>
-              <span className="card-value card-amount">
+              <span className="card-value card-amount input-class">
                 {editingRow === index ? (
                   <input
                     type="number"
@@ -164,4 +164,4 @@ const MobileTableView = ({
   );
 };
 
-export default MobileTableView;
+export default MobileTrackingTableView;

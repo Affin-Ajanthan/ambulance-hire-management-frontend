@@ -7,6 +7,7 @@ const CustomDropdown = ({
   onChange,
   getStyle,
   placeholder = "Select...",
+  className,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -27,7 +28,7 @@ const CustomDropdown = ({
   return (
     <div className="custom-dropdown" ref={dropdownRef}>
       <div
-        className="dropdown-trigger"
+        className={`dropdown-trigger ${className}`}
         onClick={() => setIsOpen(!isOpen)}
         style={getStyle ? getStyle(value) : {}}
       >

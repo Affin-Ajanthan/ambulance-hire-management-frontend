@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../assets/css/dataTable.css";
-import DesktopTableView from "./DesktopTableView";
-import MobileTableView from "./MobileTableView";
+import "../../assets/css/dataTable.css";
+import DesktopTableView from "./DesktopTrackingTableView";
+import MobileTableView from "./MobileTrackingTableView";
 import TableViewFilters from "./TableViewFilters";
+import Pagination from "../Elements/Pagination";
 
 const TrackingDataTable = () => {
   const [list, setList] = useState([]);
@@ -157,37 +158,40 @@ const TrackingDataTable = () => {
           list={list}
         />
 
-        <DesktopTableView
-          filteredList={filteredList}
-          editingRow={editingRow}
-          handleInputChange={handleInputChange}
-          editData={editData}
-          drivers={drivers}
-          formatCurrency={formatCurrency}
-          statuses={statuses}
-          getStatusStyle={getStatusStyle}
-          allowEdit={allowEdit}
-          saveEdit={saveEdit}
-          cancelEdit={cancelEdit}
-          startEdit={startEdit}
-          StatusTag={StatusTag}
-        />
-
-        <MobileTableView
-          filteredList={filteredList}
-          editingRow={editingRow}
-          handleInputChange={handleInputChange}
-          editData={editData}
-          drivers={drivers}
-          formatCurrency={formatCurrency}
-          statuses={statuses}
-          getStatusStyle={getStatusStyle}
-          allowEdit={allowEdit}
-          saveEdit={saveEdit}
-          cancelEdit={cancelEdit}
-          startEdit={startEdit}
-          StatusTag={StatusTag}
-        />
+        <Pagination
+          list={filteredList}
+          title="Transport Records"
+          listName="filteredList"
+        >
+          <DesktopTableView
+            editingRow={editingRow}
+            handleInputChange={handleInputChange}
+            editData={editData}
+            drivers={drivers}
+            formatCurrency={formatCurrency}
+            statuses={statuses}
+            getStatusStyle={getStatusStyle}
+            allowEdit={allowEdit}
+            saveEdit={saveEdit}
+            cancelEdit={cancelEdit}
+            startEdit={startEdit}
+            StatusTag={StatusTag}
+          />
+          <MobileTableView
+            editingRow={editingRow}
+            handleInputChange={handleInputChange}
+            editData={editData}
+            drivers={drivers}
+            formatCurrency={formatCurrency}
+            statuses={statuses}
+            getStatusStyle={getStatusStyle}
+            allowEdit={allowEdit}
+            saveEdit={saveEdit}
+            cancelEdit={cancelEdit}
+            startEdit={startEdit}
+            StatusTag={StatusTag}
+          />
+        </Pagination>
       </div>
     </div>
   );
